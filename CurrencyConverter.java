@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
 public class CurrencyConverter {
-    static Scanner sc = new Scanner(System.in);
-    static String convertingFrom, convertingTo;
-    static float initialCurrency, convertedCurrency, currencyFactor;
+    static Scanner sc = new Scanner(System.in); // Global Scanner
+
+    static String convertingFrom, convertingTo; // Variables
+    static float initialCurrency, convertedCurrency, currencyFactor; // Variables
 
     static void ConverterWelcome() {
         System.out.println("!!Welcome to Currency Converter!!");// welcome!
@@ -28,7 +29,7 @@ public class CurrencyConverter {
         return sc.nextFloat();
     }
 
-    static void ConvertingFrom_To_Matches() {
+    static void ConvertingFrom_To_Conditions() { // this method checks the conditions of conversion!
 
         if (convertingFrom.equalsIgnoreCase("INR")) {
 
@@ -42,7 +43,7 @@ public class CurrencyConverter {
                 System.out.println("Please choose a valid currency!");
                 CurrencyOptions();
                 convertingTo = getConvertingTo();
-                ConvertingFrom_To_Matches();
+                ConvertingFrom_To_Conditions();
             }
         } else if (convertingFrom.equalsIgnoreCase("USD")) {
 
@@ -56,7 +57,7 @@ public class CurrencyConverter {
                 System.out.println("Please choose a valid currency!");
                 CurrencyOptions();
                 convertingTo = getConvertingTo();
-                ConvertingFrom_To_Matches();
+                ConvertingFrom_To_Conditions();
             }
         } else if (convertingFrom.equalsIgnoreCase("EUR")) {
 
@@ -70,7 +71,7 @@ public class CurrencyConverter {
                 System.out.println("Please choose a valid currency!");
                 CurrencyOptions();
                 convertingTo = getConvertingTo();
-                ConvertingFrom_To_Matches();
+                ConvertingFrom_To_Conditions();
             }
         } else if (convertingFrom.equalsIgnoreCase("AUD")) {
 
@@ -84,18 +85,19 @@ public class CurrencyConverter {
                 System.out.println("Please choose a valid currency!");
                 CurrencyOptions();
                 convertingTo = getConvertingTo();
-                ConvertingFrom_To_Matches();
+                ConvertingFrom_To_Conditions();
             }
         } else {
             System.out.println("Please choose a valid currency!");
             CurrencyOptions();
             convertingFrom = getConvertingFrom();
             convertingTo = getConvertingTo();
-            ConvertingFrom_To_Matches();
+            ConvertingFrom_To_Conditions();
         }
     }
 
     static void CurrencyConverterFunction() {
+        // this method is the CurrencyConverterFunction which runs till the user chooses 'Y'!
         boolean convertAnotherCurrency = true;
         char y_n;
 
@@ -106,7 +108,7 @@ public class CurrencyConverter {
             convertingFrom = getConvertingFrom();
             convertingTo = getConvertingTo();
 
-            ConvertingFrom_To_Matches();
+            ConvertingFrom_To_Conditions();
 
             initialCurrency = getInitialCurrency();
 
@@ -128,6 +130,6 @@ public class CurrencyConverter {
     }
 
     public static void main(String[] args) {
-        CurrencyConverterFunction();
+        CurrencyConverterFunction(); // calling the method!
     }
 }
